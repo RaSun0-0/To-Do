@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f4f5f7; --card: #fff; --text: #1f2937; --muted: #6b7280;
+  --line: #e5e7eb; --accent: #4f46e5;
+  --shadow: 0 1px 3px rgba(16,24,40,.08), 0 4px 14px rgba(16,24,40,.06);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111318; --card: #1b1e26; --text: #f3f4f6; --muted: #9ca3af;
+    --line: #2d313c; --accent: #818cf8; --shadow: 0 1px 3px rgba(0,0,0,.4);
+  }
+}
+body { background: var(--bg); color: var(--text); font-family: 'Noto Sans Thai', system-ui, sans-serif; margin: 0; }
+.card { background: var(--card); box-shadow: var(--shadow); border-radius: 14px; }
+.inp { background: var(--card); color: var(--text); border: 1px solid var(--line); }
+.inp:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+@keyframes in { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+.item { animation: in .2s ease; max-height: 200px; overflow: hidden; }
+.item.out { opacity: 0; transform: translateX(24px); max-height: 0; margin: 0; padding-top: 0; padding-bottom: 0; transition: all .25s ease; }
+.tab { color: var(--muted); }
+.tab.on { background: var(--accent); color: #fff; }
+@media (prefers-reduced-motion: reduce) { .item { animation: none; } .item.out { transition: none; } }
