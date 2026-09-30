@@ -23,3 +23,9 @@ body { background: var(--bg); color: var(--text); font-family: 'Noto Sans Thai',
 .tab { color: var(--muted); }
 .tab.on { background: var(--accent); color: #fff; }
 @media (prefers-reduced-motion: reduce) { .item { animation: none; } .item.out { transition: none; } }
+
+.side-btn { color: var(--text); width: 100%; white-space: nowrap; }
+.side-btn:hover { background: var(--bg); }
+.side-btn.on { background: var(--accent); color: #fff; }
+@media (max-width: 767px) { .side-btn { width: auto; } }
+:root { color-scheme: light dark; }
